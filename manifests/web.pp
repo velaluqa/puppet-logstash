@@ -82,7 +82,8 @@ class logstash::web (
     group   => 'root',
     mode    => '0755',
     content => $initscript,
-    before  => Service[ 'logstash-web' ]
+    before  => Service[ 'logstash-web' ],
+    notify  => Service[ 'logstash-web' ],
   }
 
   if ($status != 'unmanaged') {
