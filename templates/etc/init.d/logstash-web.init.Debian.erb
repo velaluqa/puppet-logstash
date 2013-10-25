@@ -67,7 +67,7 @@ fi
 # Define other required variables
 PID_FILE=/var/run/$NAME.pid
 DAEMON=$LS_HOME/logstash.jar
-DAEMON_OPTS="web"
+DAEMON_OPTS="web -a <%= @bind_address %> -p <%= @port %>"
 
 is_true() {
     if [ "x$1" = "xtrue" -o "x$1" = "xyes" -o "x$1" = "x1" ] ; then

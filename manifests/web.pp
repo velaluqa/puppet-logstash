@@ -13,8 +13,10 @@
 #
 #
 class logstash::web (
-  $ensure = "present",
-  $status = "enabled"
+  $ensure       = "present",
+  $status       = "enabled",
+  $bind_address = "0.0.0.0",
+  $port         = 9292
 ) {
 
   #### Service management
